@@ -1,1 +1,26 @@
+:host {
 
+    ion-content {
+        --background : linear-gradient(to bottom, #a8ff78, #78ffd6);
+    }
+
+    .header {
+        height: 30vh;
+        background: #eeeeee;
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+    }
+
+    .menu-wrapper {
+        z-index: 99;
+        margin-top: -90px;
+    }
+
+    .box-menu {
+        height: 150px;
+        background: #ffffff;
+        border-radius: 10%;
+    }
+
+
+}

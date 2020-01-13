@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { DataService } from '../services/data/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public navCtrl          : NavController,
+              public dataService     : DataService) {}
+
+  ionViewWillEnter(){
+  }
+
+  goTo(page){
+    this.navCtrl.navigateRoot(page);
+  }
 
 }

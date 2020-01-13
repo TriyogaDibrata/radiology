@@ -1,0 +1,40 @@
+.header {
+    height: 150px;
+    background : var(--ion-color-primary);
+    color: var(--ion-color-light);
+}
+
+.body-top-header{
+  height: 60px;
+  padding: 20px;
+}
+
+.body-bottom-header{
+  height: 90px;
+  padding-left : 5px;
+  padding-right: 5px;
+  padding-top: 30px;
+
+  ion-item{
+    border-radius: 7px;
+  }
+}
+
+.description {
+  padding: 20px;
+}
+
+.title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-top: 5px;
+}
+
+.detail {
+  color: #606060;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: justify;
+}

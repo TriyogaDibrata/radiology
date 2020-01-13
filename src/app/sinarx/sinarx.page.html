@@ -1,0 +1,51 @@
+<ion-content class="ion-no-padding" (click)="!showList">
+    <div class="header">
+      <div class="body-top-header">
+        <ion-toolbar color="primary">
+          <ion-buttons slot="start">
+            <ion-back-button defaultHref="home" icon="arrow-round-back" text=""></ion-back-button>
+          </ion-buttons>
+          <ion-title class="lato-bold">Sinar-X</ion-title>
+        </ion-toolbar>
+      </div>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+          <div class="body-bottom-header">
+            <ion-toolbar color="primary">
+              <ion-searchbar animated="true" debounce="500" (ionInput)="filterData($event)" placeholder="Masukan jenis pemeriksaan"></ion-searchbar>
+            </ion-toolbar>
+          </div>
+
+          <ion-card class="body-dropdown ion-no-padding" *ngIf="showList">
+            <ion-card-content class="ion-no-padding">
+              <ion-item class="ion-activatable" lines="none" *ngFor="let item of items" (click)="goTo(item)">
+                <ion-ripple-effect></ion-ripple-effect>
+                {{item.jenis_pemeriksaan}}
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+          <div class="description">
+            <div class="title lato-regular">
+              Sinar-X
+            </div>
+            <br>
+            <div class="detail lato-regular">
+              Salah satu bentuk radiasi electromagnetic seperti cahaya tampak dan gelombang radio. Sinar X memiliki energy yang tinggi sehingga dapat menembus tubuh manusia. Sinar X lebih dikenal dengan foto Roentgen.
+              <br>
+              <br>
+              Sinar X digunakan untuk melihat kondisi bagian dalam tubuh serta menentukan jenis penyakit
+              <br>
+              <br>
+              Apabila radiasi sinar-X tidak dikendalikan dapat menimbulkan risiko yang bersifat stokastik (tidak dirasakan langsung dan bersifat kumulatif) dan non stokastik (dirasakan langsung).
+            </div>
+          </div>
+
+      </ion-col>
+    </ion-row>
+</ion-content>

@@ -1,14 +1,16 @@
 :host {
 
-    ion-content {
-        --background : linear-gradient(to bottom, #a8ff78, #78ffd6);
+    .header {
+        height: 220px;
+        background : var(--ion-color-primary);
+        color: var(--ion-color-light);
+        padding : 28px;
     }
 
-    .header {
-        height: 30vh;
-        background: #eeeeee;
-        border-bottom-left-radius: 10%;
-        border-bottom-right-radius: 10%;
+    .header .tag-line {
+        width: 240px;
+        font-size: 16px;
+        line-height: 22px;
     }
 
     .menu-wrapper {
@@ -17,10 +19,36 @@
     }
 
     .box-menu {
-        height: 150px;
+        height: 145px;
         background: #ffffff;
         border-radius: 10%;
+        margin: 12px;
+        padding-top: 32px;
+        text-align: center;
     }
 
+    .box-menu img{
+        display: block;
+        margin: auto;
+        width: 62px;
+        height: auto;
+    }
 
+    .box-menu ion-label {
+        --color: #4F4F4F;
+        line-height: 400%;
+    }
+
+    .version {
+        position: absolute;
+        bottom: 40px;
+        width: 100%;
+        text-align: center;
+
+        ion-text {
+            font-size: 16px;
+            font-weight: 300;
+            color: #828282;
+        }
+    }
 }

@@ -53,22 +53,38 @@
     src         : url('../src/assets/fonts/Lato-Semibold.ttf');
 }
 
-:root[mode=md] .lato-bold{
+.lato-bold{
     --ion-font-family:  'Lato-Bold'!important;
     font-family:  'Lato-Bold' !important;
 }
 
-:root[mode=md] .lato-light{
+.lato-light{
     --ion-font-family:  'Lato-Light'!important;
     font-family:  'Lato-Light' !important;
 }
 
-:root[mode=md] .lato-light{
-    --ion-font-family:  'Lato-Light'!important;
-    font-family:  'Lato-Light' !important;
-}
-
-:root[mode=md] .lato-regular{
+.lato-regular{
     --ion-font-family:  'Lato-Regular'!important;
     font-family:  'Lato-Regular' !important;
+}
+
+.lato-semibold{
+    --ion-font-family:  'Lato-Semibold'!important;
+    font-family:  'Lato-Regular' !important;
+}
+
+.mt10 {
+  margin-top : 10px;
+}
+
+.mt20 {
+  margin-top : 20px;
+}
+
+.mt30 {
+  margin-top : 30px;
+}
+
+.mt50 {
+  margin-top : 50px;
 }

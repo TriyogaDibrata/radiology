@@ -1,0 +1,30 @@
+<ion-content class="ion-no-padding" (click)="!showList">
+    <div class="header">
+      <div class="body-top-header">
+        <ion-toolbar color="primary">
+          <ion-buttons slot="start">
+            <ion-back-button defaultHref="home" icon="arrow-round-back" text=""></ion-back-button>
+          </ion-buttons>
+          <ion-title class="lato-bold">Risiko Radiasi</ion-title>
+        </ion-toolbar>
+      </div>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+          <div class="body-bottom-header">
+            <ion-toolbar color="primary">
+              <ion-searchbar animated="true" debounce="500" (ionInput)="filterData($event)" placeholder="Masukan jenis pemeriksaan"></ion-searchbar>
+            </ion-toolbar>
+          </div>
+
+          <ion-card class="body-dropdown ion-no-padding" *ngIf="showList">
+            <ion-card-content class="ion-no-padding">
+              <ion-item class="ion-activatable" lines="none" *ngFor="let item of items" (click)="goTo(item)">
+                <ion-ripple-effect></ion-ripple-effect>
+                {{item.jenis_pemeriksaan}}
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-content>

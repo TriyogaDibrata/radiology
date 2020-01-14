@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="bukti-edukasi" icon="arrow-round-back" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="lato-regular">
+      Bukti Edukasi
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="light" (click)="exportPdf()">
+        <ion-icon slot="icon-only" name="md-print" size="small"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="printable-content">
+    <div class="printable-area" id="printable-area">
+      <div class="body-wrapper">
+          <h1>Edukasi Resiko Radiasi</h1>
+          <p>Saya, yang bertanda tangan di bawah ini menyatakan :</p>
+          <ol>
+              <li>Saya memahami tujuan dan manfaat pemeriksaan radiologi ini sebagaimana telah ditayangkan dalam aplikasi termasuk resiko yang akan terjadi.</li>
+              <li>Saya menyetujui jumlah dosis radiasi yang akan saya terima pada pemeriksaan radiologi sesuai dengan formulir permintaan radiologi.</li>
+              <li>Saya tidak akan menuntut/menggugat dalam bentuk apapun, bila terjadi komplikasi, serta kami bersedia menerima konsekuensi hukum bila mengingkari pernyataan ini.</li>
+          </ol>
+          <div class="tbl-signature">
+              <table width="100%">
+                  <tbody>
+                      <tr>
+                          <td>Yang Menyatakan</td>
+                          <td>Petugas Radiologi</td>
+                      </tr>
+                      <tr style="height:20px"></tr>
+                      <tr style="height:20px"></tr>
+                      <tr>
+                          <td>{{ nama_pasien }}</td>
+                          <td>....................</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <p style="text-align:center"><b>Dosis Radiasi Maksimal Pemeriksaan Radiologi</b></p>
+          <div class="tbl-dosis">
+              <table width="100%">
+                  <thead>
+                      <th>Jenis Pemeriksaan</th>
+                      <th>Dosis Radiasi (mGy)</th>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Thorax AP/Lateral</td>
+                          <td>0,4 / 1,5</td>
+                      </tr>
+                      <tr>
+                          <td>Extremitas atas dan bawah</td>
+                          <td>0,4</td>
+                      </tr>
+                      <tr>
+                          <td>Abdomen/ pelvis/sendi panggul</td>
+                          <td>10</td>
+                      </tr>
+                      <tr>
+                          <td>Thoracal AP/Lateral</td>
+                          <td>7 / 20</td>
+                      </tr>
+                      <tr>
+                          <td>Gigi/panoramic</td>
+                          <td>7</td>
+                      </tr>
+                      <tr>
+                          <td>Kepala/ skull AP/Lateral</td>
+                          <td>5 / 3</td>
+                      </tr>
+                      <tr>
+                          <td>CT scan abdomen</td>
+                          <td>25</td>
+                      </tr>
+                      <tr>
+                          <td>CT scan spine </td>
+                          <td>35</td>
+                      </tr>
+                      <tr>
+                          <td>CT scan kepala</td>
+                          <td>50</td>
+                      </tr>
+                      <tr>
+                          <td>CT scan Thorax</td>
+                          <td>20</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+  </ion-content>

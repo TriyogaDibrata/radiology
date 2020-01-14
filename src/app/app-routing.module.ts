@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'detail-risiko/:id',
     loadChildren: () => import('./detail-risiko/detail-risiko.module').then( m => m.DetailRisikoPageModule)
   },
+  {
+    path: 'pdf-bukti/:nama',
+    loadChildren: () => import('./pdf-bukti/pdf-bukti.module').then( m => m.PdfBuktiPageModule)
+  },
 ];
 
 @NgModule({

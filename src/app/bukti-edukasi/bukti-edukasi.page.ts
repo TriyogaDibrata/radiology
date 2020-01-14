@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-bukti-edukasi',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class BuktiEdukasiPage implements OnInit {
 
   disabled_button       : boolean = true;
+  nama_pasien           : any;
 
-  constructor() { }
+  constructor(public navCtrl          : NavController) { }
 
   ngOnInit() {
   }
@@ -23,6 +25,11 @@ export class BuktiEdukasiPage implements OnInit {
     } else {
       this.disabled_button = true;
     }
+  }
+
+  goTo(){
+    console.log(this.nama_pasien);
+    this.navCtrl.navigateRoot(['pdf-bukti/', this.nama_pasien]);
   }
 
 }

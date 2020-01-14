@@ -1,0 +1,55 @@
+ion-header {
+  ion-toolbar {
+    padding : 6px;
+  }
+}
+
+ion-content {
+  background-color: #c0c0ff;
+  .printable-content {
+    margin : 16px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    background-color: #ffffff;
+
+    .printable-area{
+      width: 595px;
+      height: 877px;
+    }
+  }
+}
+
+.body-wrapper {
+    border: solid 1px #555;
+    display: block;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 20px;
+}
+.body-wrapper h1 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.body-wrapper ol {
+    text-align: justify;
+}
+.body-wrapper table {
+    width:100%;
+}
+.body-wrapper .tbl-signature table tr td,
+.body-wrapper .tbl-dosis table tr td {
+    text-align: center;
+}
+.body-wrapper .tbl-dosis table{
+    border-collapse: collapse;
+}
+.body-wrapper .tbl-dosis table,
+.body-wrapper .tbl-dosis th,
+.body-wrapper .tbl-dosis td {
+    border:solid 1px #333;
+}
+.body-wrapper .tbl-dosis th,
+.body-wrapper .tbl-dosis td {
+    padding:5px;
+}

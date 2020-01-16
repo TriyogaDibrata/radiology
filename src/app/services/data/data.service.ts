@@ -26,7 +26,7 @@ export class DataService {
   }
 
   getDetailRisiko(id){
-    return this.http.get(this.env.API_URL + 'risiko?'+id, {headers : this.headers})
+    return this.http.get(this.env.API_URL + 'risiko?id='+id, {headers : this.headers})
     .pipe();
   }
 

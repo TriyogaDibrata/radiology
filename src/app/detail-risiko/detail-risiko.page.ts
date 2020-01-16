@@ -11,14 +11,12 @@ export class DetailRisikoPage implements OnInit {
 
   item_id        : any;
   detail         : any = {};
-  Dosis          : any;
 
   constructor(private route         : ActivatedRoute,
               private dataService   : DataService) { }
 
   ngOnInit() {
     this.item_id = this.route.snapshot.paramMap.get('id');
-    console.log(this.item_id);
   }
 
   ionViewWillEnter(){

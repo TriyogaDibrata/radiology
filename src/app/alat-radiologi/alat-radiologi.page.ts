@@ -24,7 +24,7 @@ export class AlatRadiologiPage implements OnInit {
   }
 
   goTo(item){
-    this.navCtrl.navigateRoot(['detail-alat-radiologi/', item.id]);
+    this.navCtrl.navigateForward(['detail-alat-radiologi/', item.id]);
   }
 
 

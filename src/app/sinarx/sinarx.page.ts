@@ -24,7 +24,7 @@ export class SinarxPage implements OnInit {
   }
 
   goTo(item){
-    this.navCtrl.navigateRoot(['detail-sinarx/', item.id]);
+    this.navCtrl.navigateForward(['detail-sinarx/', item.id]);
   }
 
 

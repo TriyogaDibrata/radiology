@@ -24,7 +24,7 @@ export class RisikoRadiasiPage implements OnInit {
   }
 
   goTo(item){
-    this.navCtrl.navigateRoot(['detail-risiko/', item.id]);
+    this.navCtrl.navigateForward(['detail-risiko/', item.id]);
   }
 
 

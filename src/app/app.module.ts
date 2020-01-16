@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +26,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
     StatusBar,
     FileOpener,
     SplashScreen,
+    AppVersion,
     ScreenOrientation,
     File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

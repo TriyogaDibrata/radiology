@@ -8,6 +8,15 @@ import { map } from "rxjs/operators";
 })
 export class DataService {
 
+  loadingOption: any = {
+    spinner : null,
+    backdropDismiss : false,
+    message : '<div class="loading-style"><div class ="blob-1"></div><div class = "blob-2"></div></div>',
+    cssClass: 'loading-style',
+    keyboardClose: true,
+    animated: true,
+  };
+
   headers = new HttpHeaders({
     'Accept' : 'application/json',
     'Content-Type' : 'application/json'

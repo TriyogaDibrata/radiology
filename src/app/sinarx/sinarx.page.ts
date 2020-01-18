@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { DataService } from '../services/data/data.service';
 
 @Component({
@@ -12,8 +12,10 @@ export class SinarxPage implements OnInit {
   jsonData    : any = [];
   showList    : boolean = false;
   items       : any = [];
+  loading     : any;
 
   constructor(public dataService     : DataService,
+              public loadingCtrl     : LoadingController,
               public navCtrl         : NavController) {
   }
 
@@ -21,12 +23,29 @@ export class SinarxPage implements OnInit {
   }
 
   ionViewWillEnter(){
+    this.showLoading();
+    this.getList();
   }
 
   goTo(item){
     this.navCtrl.navigateForward(['detail-sinarx/', item.id]);
   }
 
+  getList(){
+    this.dataService.getListData()
+      .subscribe(data => {
+        this.loading.dismiss();
+        console.log(data);
+      }, err=> {
+        this.loading.dismiss();
+      });
+  }
+
+  async showLoading(){
+    this.loading = await this.loadingCtrl.create(this.dataService.loadingOption);
+
+    await this.loading.present();
+  }
 
   filterData(ev : any){
     const val = ev.target.value;

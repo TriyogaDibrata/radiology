@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { DataService } from '../services/data/data.service';
 
 @Component({
@@ -12,15 +12,35 @@ export class AlatRadiologiPage implements OnInit {
   jsonData    : any = [];
   showList    : boolean = false;
   items       : any = [];
+  loading     : any;
 
   constructor(public dataService     : DataService,
-              public navCtrl         : NavController) {
+              public navCtrl         : NavController,
+              public loadingCtrl     : LoadingController) {
   }
 
   ngOnInit() {
   }
 
   ionViewWillEnter(){
+    this.showLoading();
+    this.getList();
+  }
+
+  async showLoading(){
+    this.loading = await this.loadingCtrl.create(this.dataService.loadingOption);
+
+    await this.loading.present();
+  }
+
+  getList(){
+    this.dataService.getListData()
+      .subscribe(data => {
+        this.loading.dismiss();
+        console.log(data);
+      }, err=> {
+        this.loading.dismiss();
+      });
   }
 
   goTo(item){

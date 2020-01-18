@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.rediology.e-3ramed" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>e-3Ramed</name>
     <description>Radiology Education</description>
-    <author email="triyoga.dibrata@gmail.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="aditya.setiawan21.as@gmail.com" href="aditya-setiawan.com">Aditya Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

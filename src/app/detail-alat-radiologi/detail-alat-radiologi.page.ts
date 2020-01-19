@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data/data.service';
 import { LoadingController } from '@ionic/angular';
+import { AlertService } from '../services/alert/alert.service';
 
 @Component({
   selector: 'app-detail-alat-radiologi',
@@ -17,6 +18,7 @@ export class DetailAlatRadiologiPage implements OnInit {
 
   constructor(private route         : ActivatedRoute,
               private dataService   : DataService,
+              public alertService   : AlertService,
               public loadingCtrl    : LoadingController) { }
 
   ngOnInit() {
@@ -44,6 +46,7 @@ export class DetailAlatRadiologiPage implements OnInit {
     }, err => {
       console.log(err);
       this.loading.dismiss();
+      this.alertService.presentAlert('Error', 'Cannot load requests');
     })
   }
 

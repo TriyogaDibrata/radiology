@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, LoadingController } from '@ionic/angular';
 import { DataService } from '../services/data/data.service';
+import { AlertService } from '../services/alert/alert.service';
 
 @Component({
   selector: 'app-alat-radiologi',
@@ -16,6 +17,7 @@ export class AlatRadiologiPage implements OnInit {
 
   constructor(public dataService     : DataService,
               public navCtrl         : NavController,
+              public alertService    : AlertService,
               public loadingCtrl     : LoadingController) {
   }
 
@@ -40,6 +42,7 @@ export class AlatRadiologiPage implements OnInit {
         console.log(data);
       }, err=> {
         this.loading.dismiss();
+        this.alertService.presentAlert('Error', 'Cannot load requests');
       });
   }
 

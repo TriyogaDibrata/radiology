@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, LoadingController } from '@ionic/angular';
 import { DataService } from '../services/data/data.service';
+import { AlertService } from '../services/alert/alert.service';
 
 @Component({
   selector: 'app-sinarx',
@@ -16,7 +17,8 @@ export class SinarxPage implements OnInit {
 
   constructor(public dataService     : DataService,
               public loadingCtrl     : LoadingController,
-              public navCtrl         : NavController) {
+              public navCtrl         : NavController,
+              private alertService   : AlertService) {
   }
 
   ngOnInit() {
@@ -38,6 +40,7 @@ export class SinarxPage implements OnInit {
         console.log(data);
       }, err=> {
         this.loading.dismiss();
+        this.alertService.presentAlert('Error', 'Cannot load request');
       });
   }
 

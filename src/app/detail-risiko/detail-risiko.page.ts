@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data/data.service';
 import { LoadingController } from '@ionic/angular';
+import { AlertService } from '../services/alert/alert.service';
 
 @Component({
   selector: 'app-detail-risiko',
@@ -16,6 +17,7 @@ export class DetailRisikoPage implements OnInit {
 
   constructor(private route         : ActivatedRoute,
               private dataService   : DataService,
+              public alertService   : AlertService,
               public loadingCtrl    : LoadingController) { }
 
   ngOnInit() {
@@ -42,6 +44,7 @@ export class DetailRisikoPage implements OnInit {
     }, err => {
       this.loading.dismiss();
       console.log(err);
+      this.alertService.presentAlert('Error', 'Cannot load requests');
     })
   }
 

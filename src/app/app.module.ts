@@ -13,14 +13,16 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
+import { PopoverComponent } from './components/popover/popover/popover.component';
+import { ImgPopoverComponent } from './components/img-popover/img-popover/img-popover.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PopoverComponent, ImgPopoverComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot({mode: 'ios'}),
+    IonicModule.forRoot(),
     AppRoutingModule],
   providers: [
     StatusBar,
@@ -31,6 +33,6 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
     File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, PopoverComponent, ImgPopoverComponent]
 })
 export class AppModule {}

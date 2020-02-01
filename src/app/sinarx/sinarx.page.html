@@ -1,18 +1,16 @@
 <ion-content class="ion-no-padding" (click)="!showList">
-    <div class="header">
-      <div class="body-top-header">
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="home" icon="arrow-round-back" text=""></ion-back-button>
-          </ion-buttons>
-          <ion-title class="lato-bold">Sinar-X</ion-title>
-        </ion-toolbar>
-      </div>
+    <div class="sub-menu-header">
+      <ion-toolbar class="toolbar-header" color="primary" mode="ios">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="home" icon="arrow-round-back" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title class="lato-bold">Sinar-X</ion-title>
+      </ion-toolbar>
       <ion-row class="ion-justify-content-center">
-        <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+        <ion-col class="ion-no-padding" size="12" size-md="6" size-xl="6">
           <div class="body-bottom-header">
             <ion-toolbar color="primary">
-              <ion-searchbar animated="true" debounce="500" (ionInput)="filterData($event)" placeholder="Masukan jenis pemeriksaan"></ion-searchbar>
+              <ion-searchbar mode="ios" animated="true" debounce="500" (ionInput)="filterData($event)" placeholder="Masukan jenis pemeriksaan"></ion-searchbar>
             </ion-toolbar>
           </div>
 

@@ -1,55 +1,87 @@
 <ion-content class="ion-no-padding">
-    <div class="header">
-      <div class="body-top-header">
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="alat-radiologi" icon="arrow-round-back" text=""></ion-back-button>
-          </ion-buttons>
-          <ion-title class="lato-bold">Alat Radiologi</ion-title>
-        </ion-toolbar>
-      </div>
+  <div class="sub-menu-header">
+    <ion-toolbar color="primary" class="toolbar-header" mode="ios">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="alat-radiologi" icon="arrow-round-back" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title class="lato-bold">Alat Radiologi</ion-title>
+    </ion-toolbar>
 
-      <ion-row class="ion-justify-content-center">
-        <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-no-padding" size="12" size-md="6" size-xl="6">
 
-            <ion-card class="main-info ion-no-padding">
-              <ion-card-content class="ion-no-padding">
-                <ion-row>
-                  <ion-col class="info-wrapper" size="6">
-                      <img src="assets/icon/1x/ico-jenis.png">
-                      <ion-label class="ion-no-padding lato-regular">
-                        <p>Jenis Pemeriksaan</p>
-                        <h3>{{ detail.jenis_pemeriksaan }}</h3>
-                      </ion-label>
-                  </ion-col>
-                  <ion-col class="info-wrapper" size="6">
-                      <img src="assets/icon/1x/ico-alat.png">
-                      <ion-label class="ion-no-padding lato-regular">
-                        <p>Alat Radiologi</p>
-                        <h3>{{ detail.modalitas }}</h3>
-                      </ion-label>
-                  </ion-col>
-                </ion-row>
-              </ion-card-content>
-            </ion-card>
-
-        </ion-col>
-      </ion-row>
-    </div>
-
-    <ion-row class="ion-justify-content-center main-body">
-      <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
-
-        <div class="description">
-          <div class="title lato-regular">
-            Deskripsi Alat
-          </div>
-          <br>
-          <div class="detail lato-regular">
-            {{ detail.deskripsi_alat }}
-          </div>
-        </div>
+          <ion-card class="main-info ion-no-padding">
+            <ion-card-content class="ion-no-padding">
+              <ion-row>
+                <ion-col class="info-wrapper" size="6">
+                    <img src="assets/icon/1x/ico-jenis.png">
+                    <ion-label class="ion-no-padding lato-regular">
+                      <p>Jenis Pemeriksaan</p>
+                      <h3>{{ detail.jenis_pemeriksaan}}</h3>
+                    </ion-label>
+                </ion-col>
+                <ion-col class="info-wrapper" size="6">
+                    <img src="assets/icon/1x/ico-dosis.png">
+                    <ion-label class="ion-no-padding lato-regular">
+                      <p>Alat Radiologi</p>
+                      <h3>{{ detail.modalitas }}</h3>
+                    </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
 
       </ion-col>
     </ion-row>
+  </div>
+
+  <ion-row class="ion-justify-content-center main-body">
+    <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+
+      <div class="description">
+        <div class="title lato-regular">
+          Jenis Pemeriksaan
+        </div>
+        <div class="detail lato-regular">
+          {{ detail.jenis_pemeriksaan }}
+        </div>
+
+        <div class="image-container">
+          <ion-col size="5" class="ion-no-padding" *ngFor="let file of files; let id = index;" (click)="enlarge(files, id)">
+              <img [src]="envService.FILE_URL + file.file_name" />
+          </ion-col>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="divider"></div>
+
+  <ion-row class="ion-justify-content-center main-body">
+    <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+      <div class="description-1">
+
+        <div class="title-1 lato-regular">
+          Alat Radiologi
+        </div>
+        <div class="detail lato-regular">
+          {{ detail.modalitas }}
+        </div>
+
+        <div class="title lato-regular">
+          Deskripsi Alat
+        </div>
+        <div class="detail lato-regular">
+          {{ detail.deskripsi_alat }}
+        </div>
+
+        <div class="image-container-1">
+          <ion-col size="10" class="ion-no-padding" *ngFor="let ar_file of ar_files; let  id = index" class="ion-no-padding" (click)="enlarge(ar_files, id)">
+            <img [src]="envService.FILE_URL + ar_file.file_name" />
+          </ion-col>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

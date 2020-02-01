@@ -39,4 +39,14 @@ export class DataService {
     .pipe();
   }
 
+  getApd(id){
+    return this.http.get(this.env.API_URL + 'apd?id='+id, {headers : this.headers})
+    .pipe();
+  }
+
+  getAlatRadiologiFiles(id){
+    return this.http.get(this.env.API_URL + 'alat-radiologi?id='+id, {headers : this.headers})
+    .pipe();
+  }
+
 }

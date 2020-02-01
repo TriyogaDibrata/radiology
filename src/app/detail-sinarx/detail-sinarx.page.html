@@ -1,16 +1,14 @@
 <ion-content class="ion-no-padding">
-    <div class="header">
-      <div class="body-top-header">
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="sinarx" icon="arrow-round-back" text=""></ion-back-button>
-          </ion-buttons>
-          <ion-title class="lato-bold">Sinar-X</ion-title>
-        </ion-toolbar>
-      </div>
+    <div class="sub-menu-header">
+      <ion-toolbar color="primary" class="toolbar-header" mode="ios">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="sinarx" icon="arrow-round-back" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title class="lato-bold">Sinar-X</ion-title>
+      </ion-toolbar>
 
       <ion-row class="ion-justify-content-center">
-        <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+        <ion-col class="ion-no-padding" size="12" size-md="6" size-xl="6">
 
             <ion-card class="main-info ion-no-padding">
               <ion-card-content class="ion-no-padding">
@@ -42,9 +40,22 @@
 
         <div class="description">
           <div class="title lato-regular">
+            Jenis Pemeriksaan
+          </div>
+          <div class="detail lato-regular">
+            {{ detail.jenis_pemeriksaan }}
+          </div>
+
+          <div class="title lato-regular">
+            Dosis
+          </div>
+          <div class="detail lato-regular">
+            {{ detail.dosis }}
+          </div>
+
+          <div class="title lato-regular">
             Persiapan Pasien
           </div>
-          <!-- <br> -->
           <div class="detail lato-regular" [innerHtml]="detail.persiapan_pasien">
           </div>
 
@@ -54,6 +65,11 @@
           <br>
           <div class="detail lato-regular">
             {{ detail.manfaat }}
+          </div>
+          <div class="image-container">
+            <ion-col size="6" class="ion-no-padding" *ngFor="let file of files; let id = index;" (click)="enlarge(files, id)">
+                <img [src]="envService.FILE_URL + file.file_name" />
+            </ion-col>
           </div>
         </div>
 

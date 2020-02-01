@@ -129,3 +129,266 @@
 .sc-ion-loading-ios-h {
   --background: transparent !important;
 }
+
+.sc-ion-loading-md-h {
+  --background: transparent !important;
+}
+
+ion-content {
+  --font-family : "Lato-Regular" !important;
+  font-family: "Lato-Regular" !important;
+}
+
+
+//home 
+.header {
+  height: 221px;
+  background : var(--ion-color-primary);
+  color: var(--ion-color-light);
+  padding : 28px;
+
+  img {
+    margin:5px 0;
+    width: 128px;
+  }
+}
+
+.header .tag-line {
+  width: 240px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.menu-wrapper {
+  z-index: 99;
+  margin-top: -90px;
+}
+
+.box-menu {
+  height: 145px;
+  background: #ffffff;
+  border-radius: 10%;
+  margin: 12px;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.box-menu img{
+  display: block;
+  margin: auto;
+  width: 62px;
+  height: auto;
+}
+
+.box-menu ion-label {
+  --color: #4F4F4F;
+  line-height: 400%;
+}
+
+.version {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+
+  ion-text {
+      font-size: 16px;
+      font-weight: 300;
+      color: #828282;
+  }
+}
+
+.divider {
+  background: #F5F7FB;
+  height: 8px;
+  width: 100%;
+}
+
+.ios .img-popover {
+  --width: calc(100% - 10px);
+  --height: auto;
+  --background: transparent;
+}
+
+.md .img-popover {
+  --width: calc(100% - 22px);
+  --height: auto;
+  --background: transparent;
+}
+
+
+//sub-menu
+.sub-menu-header {
+  position: fixed;
+  width: 100vw;
+  height: 155px;
+  background : var(--ion-color-primary);
+  color: var(--ion-color-light);
+  z-index: 999;
+}
+
+.md .toolbar-header{
+  height: 65px;
+  padding: 16px 0 0 0;
+}
+
+.ios .toolbar-header{
+  height: 65px;
+  padding: 16px 0 0 16px;
+}
+
+.body-bottom-header{
+  height: 90px;
+  padding-left : 5px;
+  padding-right: 5px;
+  padding-top: 20px;
+
+  ion-toolbar.ion-color.sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-input.sc-ion-searchbar-ios, ion-toolbar.ion-color .sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-input.sc-ion-searchbar-ios {
+      background: rgba(var(--ion-color-light-rgb),.2);
+      color: currentColor;
+  }
+}
+
+.body-dropdown {
+  background-color: #FFF;
+  overflow-y: scroll;
+  max-height: 170px;
+  z-index: 999;
+  margin-top: -25px;
+}
+
+
+.description {
+  margin-top : 150px;
+  padding: 20px;
+  position: relative;
+}
+
+.description-1 {
+  padding: 20px;
+  position: relative;
+}
+
+.title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-top: 5px;
+}
+
+.title-1 {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-top: 5px;
+}
+
+.detail {
+  margin-top: 12px;
+  color: #606060;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: justify;
+}
+
+
+//detail
+
+.main-info {
+  background-color: #fff;
+  height: 101px;
+  z-index: 999;
+  position: relative;
+  margin: 24px 16px -50px 16px;
+  border-radius: 8px;
+}
+
+.main-body {
+  overflow-y: scroll;
+}
+
+.info-wrapper {
+  display: flex;
+
+  ion-label {
+    margin-left: 10px;
+    margin-top: 25px;
+  }
+
+  p {
+    color: #828282;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  h3 {
+    color: #333;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: capitalize;
+  }
+
+  img {
+    width: 28px;
+    height: 28px;
+    margin-top: 30px;
+    margin-left: 5px;
+  }
+}
+
+.title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-top: 30px;
+}
+
+.detail {
+  color: #606060;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: justify;
+}
+
+.image-container {
+  margin-top: 20px;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  ion-col {
+    padding : 5px;
+
+    img {
+      width: 100%;
+      height: 120px;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+  }
+}
+
+.image-container-1 {
+  margin-top: 20px;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  ion-col {
+    padding : 5px;
+
+    img {
+      width: 100%;
+      height: 120px;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+  }
+}

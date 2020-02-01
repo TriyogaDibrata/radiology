@@ -1,74 +1,110 @@
 <ion-content class="ion-no-padding">
-    <div class="header">
-      <div class="body-top-header">
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="risiko-radiasi" icon="arrow-round-back" text=""></ion-back-button>
-          </ion-buttons>
-          <ion-title class="lato-bold">Risiko Radiasi</ion-title>
-        </ion-toolbar>
-      </div>
+  <div class="sub-menu-header">
+    <ion-toolbar color="primary" class="toolbar-header" mode="ios">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="risiko-radiasi" icon="arrow-round-back" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title class="lato-bold">Risiko Radiasi</ion-title>
+    </ion-toolbar>
 
-      <ion-row class="ion-justify-content-center">
-        <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-no-padding" size="12" size-md="6" size-xl="6">
 
-            <ion-card class="main-info ion-no-padding">
-              <ion-card-content class="ion-no-padding">
-                <ion-row>
-                  <ion-col class="info-wrapper" size="6">
-                      <img src="assets/icon/1x/ico-jenis.png">
-                      <ion-label class="ion-no-padding lato-regular">
-                        <p>Jenis Pemeriksaan</p>
-                        <h3>{{ detail.jenis_pemeriksaan}}</h3>
-                      </ion-label>
-                  </ion-col>
-                  <ion-col class="info-wrapper" size="6">
-                      <img src="assets/icon/1x/ico-dosis.png">
-                      <ion-label class="ion-no-padding lato-regular">
-                        <p>Dosis Radiasi</p>
-                        <h3>{{ detail.dosis }}</h3>
-                      </ion-label>
-                  </ion-col>
-                </ion-row>
-              </ion-card-content>
-            </ion-card>
-
-        </ion-col>
-      </ion-row>
-    </div>
-
-    <ion-row class="ion-justify-content-center main-body">
-      <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
-
-        <ion-card class="notif-nbd">
-          <ion-card-content>
-            <ion-icon name="information-circle"></ion-icon>
-            <ion-text>Nilai Batas Dosis pasien max 5 mSv per tahun</ion-text>
-          </ion-card-content>
-        </ion-card>
-
-        <div class="description">
-          <div class="title lato-regular">
-            Risiko Radiasi
-          </div>
-          <div class="detail lato-regular" [innerHtml]="detail.risiko">
-          </div>
-
-          <div class="title lato-regular mt50">
-            Alat Pelindung Diri
-          </div>
-          <br>
-          <div class="detail lato-regular">
-            {{ detail.apd }}
-          </div>
-
-          <div class="title lato-regular mt50">
-            Deskripsi Alat Pelindung Diri
-          </div>
-          <div class="detail lato-regular" [innerHtml]="detail.deskripsi_apd">
-          </div>
-        </div>
+          <ion-card class="main-info ion-no-padding">
+            <ion-card-content class="ion-no-padding">
+              <ion-row>
+                <ion-col class="info-wrapper" size="6">
+                    <img src="assets/icon/1x/ico-jenis.png">
+                    <ion-label class="ion-no-padding lato-regular">
+                      <p>Jenis Pemeriksaan</p>
+                      <h3>{{ detail.jenis_pemeriksaan}}</h3>
+                    </ion-label>
+                </ion-col>
+                <ion-col class="info-wrapper" size="6">
+                    <img src="assets/icon/1x/ico-dosis.png">
+                    <ion-label class="ion-no-padding lato-regular">
+                      <p>Dosis Radiasi</p>
+                      <h3>{{ detail.dosis }}</h3>
+                    </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
 
       </ion-col>
     </ion-row>
+  </div>
+
+  <ion-row class="ion-justify-content-center main-body">
+    <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+
+      <div class="description">
+
+        <ion-card class="notif-nbd">
+          <ion-card-content>
+            <ion-label>
+              <ion-icon name="information-circle"></ion-icon>
+              <ion-text>Nilai Batas Dosis pasien max 5 mSv per tahun</ion-text>
+            </ion-label>
+          </ion-card-content>
+        </ion-card>
+
+        <div class="title lato-regular">
+          Jenis Pemeriksaan
+        </div>
+        <div class="detail lato-regular">
+          {{ detail.jenis_pemeriksaan }}
+        </div>
+
+        <div class="title lato-regular">
+          Dosis Radiasi
+        </div>
+        <div class="detail lato-regular">
+          {{ detail.dosis }}
+        </div>
+
+
+        <div class="image-container">
+          <ion-col size="5" class="ion-no-padding" *ngFor="let file of files; let id = index;" (click)="enlarge(files, id)">
+              <img [src]="envService.FILE_URL + file.file_name" />
+          </ion-col>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="divider"></div>
+
+  <ion-row class="ion-justify-content-center main-body">
+    <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
+      <div class="description-1">
+
+        <div class="title-1 lato-regular">
+          Risiko Radiasi
+        </div>
+        <div class="detail lato-regular" [innerHtml]="detail.risiko">
+        </div>
+
+        <div class="title lato-regular mt50">
+          Alat Pelindung Diri
+        </div>
+        <br>
+        <div class="detail lato-regular">
+          {{ detail.apd }}
+        </div>
+
+        <div class="title lato-regular mt50">
+          Deskripsi Alat Pelindung Diri
+        </div>
+        <div class="detail lato-regular" [innerHtml]="detail.deskripsi_apd">
+        </div>
+        <div class="image-container-1">
+          <ion-col size="10" class="ion-no-padding" *ngFor="let apd_file of apd_files; let  id = index" class="ion-no-padding" (click)="enlarge(apd_files, id)">
+            <img [src]="envService.FILE_URL + apd_file.file_name" />
+          </ion-col>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

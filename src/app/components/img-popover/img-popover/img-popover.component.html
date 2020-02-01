@@ -1,0 +1,9 @@
+<ion-row class="ion-justify-content-center ion-no-padding">
+  <ion-col class="ion-no-padding" size="12" size-md="6" size-xl="6">
+    <ion-slides scrollbar="true" [options]="slideOpts">
+      <ion-slide *ngFor="let file of passed_files">
+        <img [src]="envService.FILE_URL + file.file_name" />
+      </ion-slide>
+    </ion-slides>
+  </ion-col>
+</ion-row>

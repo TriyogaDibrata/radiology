@@ -1,9 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>kueisioner</ion-title>
+<ion-header class="sub-menu-header normal">
+  <ion-toolbar color="primary" class="toolbar-header" mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="arrow-round-back" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="lato-bold">Kueisioner</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-no-padding">
+  <div class="description-1">
+    <ion-card class="notif">
+      <ion-card-content>
+        <ion-label>
+          <ion-icon src="assets/icon/svg/ico-smile.svg"></ion-icon>
+          <ion-text>Ayo selesaikan kuesioner ini untuk mengukur pengetahuan kamu tentang radiologi.</ion-text>
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
 
+    <ion-row class="auth">
+      <ion-list class="ion-no-padding ion-no-margin-top">
+        
+        <h4 class="content-title ion-no-margin-left">Lengkapi Identitas</h4>
+        
+        <ion-item>
+          <ion-label position="stacked">Nama Lengkap</ion-label>
+          <ion-input placeholder="Nama lengkap" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Umur</ion-label>
+          <ion-input placeholder="Umur" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Pendidikan Terakhir</ion-label>
+          <ion-input placeholder="Pendidikan terakhir" type="text"></ion-input>
+        </ion-item>
+        <div class="not-match error" *ngIf="pass_not_match">
+          <ion-icon name="alert"></ion-icon>
+          <ion-text>Error</ion-text>
+        </div>
+      </ion-list>
+    </ion-row>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-button expand="block" color="primary" class="ion-activatable ripple-parent"> Mulai</ion-button>
+</ion-footer>

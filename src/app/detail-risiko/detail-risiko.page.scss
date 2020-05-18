@@ -28,20 +28,10 @@
     }
   }
   
-  .notif-nbd{
-    box-shadow: none !important;
+  .notif{
     margin-top: 40px;
-    border-radius: 7px;
-    background-color: #FFF4E9;
 
     ion-label {
-      height: 17px;
-      width: 275px;
-      color: #FFAA63;
-      font-family: Lato;
-      font-size: 14px;
-      line-height: 17px;
-      text-align: justify;
       ion-text {
         margin-left: 5px;
       }

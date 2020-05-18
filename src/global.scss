@@ -459,6 +459,54 @@ ion-button {
   }
 }
 
+//Kuesioner Items
+
+.kueisioners {
+  padding:0;
+
+  .items {
+      --inner-padding-start:0;
+      --inner-padding-end:0;
+      --padding-start:15px;
+      --padding-end:15px;
+      --padding-top:10px;
+      --padding-bottom:10px;
+      --background:#E9FBF7;
+      --border-radius:10px;
+      margin-bottom:15px;
+
+      ion-label{
+          color: var(--ion-color-heading) !important;
+          font-size: var(--font-text-size);
+          font-family: Lato-Regular;
+          flex: 0 0 80%;
+          line-height: 20px;
+          white-space: normal !important;
+      }
+      ion-select {
+          color:var(--ion-color-heading);
+          flex:0 0 20%;
+          font-size: var(--font-text-size);
+          font-family: Lato-Bold;
+          padding-left:10px;
+      }
+
+      &.item-has-value {
+          border:solid 1px var(--ion-color-primary);
+          border-radius: 10px;
+      }
+  }
+  .button {
+      --inner-padding-start:0;
+      --inner-padding-end:0;
+      --padding-start:0;
+      
+      ion-button {
+          width:100%;
+      }
+  }
+}
+
 
 /* --------------------
       COMMON HELPER

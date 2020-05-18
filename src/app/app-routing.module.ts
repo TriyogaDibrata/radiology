@@ -40,6 +40,14 @@ const routes: Routes = [
     path: 'kueisioner',
     loadChildren: () => import('./kueisioner/kueisioner.module').then( m => m.KueisionerPageModule)
   },
+  {
+    path: 'kueisioner-pengetahuan',
+    loadChildren: () => import('./kueisioner-pengetahuan/kueisioner-pengetahuan.module').then( m => m.KueisionerPengetahuanPageModule)
+  },
+  {
+    path: 'kueisioner-sikap',
+    loadChildren: () => import('./kueisioner-sikap/kueisioner-sikap.module').then( m => m.KueisionerSikapPageModule)
+  },
 ];
 
 @NgModule({

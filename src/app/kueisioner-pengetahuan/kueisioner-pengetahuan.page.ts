@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-kueisioner',
-  templateUrl: './kueisioner.page.html',
-  styleUrls: ['./kueisioner.page.scss'],
+  selector: 'app-kueisioner-pengetahuan',
+  templateUrl: './kueisioner-pengetahuan.page.html',
+  styleUrls: ['./kueisioner-pengetahuan.page.scss'],
 })
-export class KueisionerPage implements OnInit {
+export class KueisionerPengetahuanPage implements OnInit {
 
   constructor(public navCtrl: NavController) { }
 

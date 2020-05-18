@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'pdf-bukti/:nama',
     loadChildren: () => import('./pdf-bukti/pdf-bukti.module').then( m => m.PdfBuktiPageModule)
   },
+  {
+    path: 'kueisioner',
+    loadChildren: () => import('./kueisioner/kueisioner.module').then( m => m.KueisionerPageModule)
+  },
 ];
 
 @NgModule({

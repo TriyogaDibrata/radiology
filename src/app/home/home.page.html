@@ -1,7 +1,7 @@
 <ion-content>
-  <div class="header">
+  <div class="header ion-flex">
     <ion-row class="ion-justify-content-center">
-      <ion-col size="12" size-md="6" size-xl="6">
+      <ion-col class="header-title ion-no-padding" size="12" size-md="6" size-xl="6">
         <img src="assets/icon/logo/e-3Ramed.png" />
         <div class="tag-line">
           <ion-text class="lato-regular">Ketahui dan cegah tingkat risiko dosis radiasi</ion-text>
@@ -12,39 +12,45 @@
 
   <ion-row class="ion-justify-content-center">
     <ion-col class="no-padding-bottom" size="12" size-md="6" size-xl="6">
-
-
-      <ion-grid class="menu-wrapper">
+      <ion-grid class="menu-wrapper ion-no-padding">
+        <h4 class="content-title">Pilih Kategori</h4>
         <ion-row>
-          <ion-col size="6">
+          <ion-col size="4" class="ion-no-padding">
             <ion-card class="box-menu ion-activatable" (click)="goTo('sinarx')">
-              <ion-ripple-effect></ion-ripple-effect>
-              <img src="assets/icon/1x/ico-sinarx.png" />
+              <img src="assets/icon/2x/ico-sinarx@2x.png" />
               <ion-label class="lato-regular">Sinar X</ion-label>
             </ion-card>
           </ion-col>
 
-          <ion-col size="6">
+          <ion-col size="4" class="ion-no-padding">
             <ion-card class="box-menu ion-activatable" (click)="goTo('alat-radiologi')">
               <ion-ripple-effect></ion-ripple-effect>
-              <img src="assets/icon/1x/ico-alat-radiologi.png" />
+              <img src="assets/icon/2x/ico-alat-radiologi@2x.png" />
               <ion-label class="lato-regular">Alat Radiologi</ion-label>
             </ion-card>
           </ion-col>
 
-          <ion-col size="6">
+          <ion-col size="4" class="ion-no-padding">
             <ion-card class="box-menu ion-activatable" (click)="goTo('risiko-radiasi')">
               <ion-ripple-effect></ion-ripple-effect>
-              <img src="assets/icon/1x/ico-resiko.png" />
+              <img src="assets/icon/2x/ico-risiko-radiasi@2x.png" />
               <ion-label class="lato-regular">Risiko Radiasi</ion-label>
             </ion-card>
           </ion-col>
 
-          <ion-col size="6">
+          <ion-col size="4" class="ion-no-padding">
             <ion-card class="box-menu ion-activatable" (click)="goTo('bukti-edukasi')">
               <ion-ripple-effect></ion-ripple-effect>
-              <img src="assets/icon/1x/ico-bukti.png" />
+              <img src="assets/icon/2x/ico-bukti-edukasi@2x.png" />
               <ion-label class="lato-regular">Bukti Edukasi</ion-label>
+            </ion-card>
+          </ion-col>
+
+          <ion-col size="4" class="ion-no-padding">
+            <ion-card class="box-menu ion-activatable" (click)="goTo('bukti-edukasi')">
+              <ion-ripple-effect></ion-ripple-effect>
+              <img src="assets/icon/2x/ico-kueisioner@2x.png" />
+              <ion-label class="lato-regular">Kueisioner</ion-label>
             </ion-card>
           </ion-col>
         </ion-row>

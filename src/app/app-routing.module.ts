@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'kueisioner-sikap',
     loadChildren: () => import('./kueisioner-sikap/kueisioner-sikap.module').then( m => m.KueisionerSikapPageModule)
   },
+  {
+    path: 'kueisioner-hasil',
+    loadChildren: () => import('./kueisioner-hasil/kueisioner-hasil.module').then( m => m.KueisionerHasilPageModule)
+  },
 ];
 
 @NgModule({

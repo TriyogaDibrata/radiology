@@ -4,10 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EnvService {
-
-  API_URL = "https://laravel.pintarkoding.com/public/api/";
-  // API_URL = "http://localhost:8000/api/"
-  // FILE_URL = "http://localhost:8000/uploads/"
+  
+  API_URL = "https://e3ramed.com/public/api/";
+  FILE_URL = "https://e3ramed.com/public/uploads/";
 
   constructor() { }
 }

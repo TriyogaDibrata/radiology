@@ -24,7 +24,7 @@ export class DetailSinarxPage implements OnInit {
               private dataService   : DataService,
               public popoverCtrl    : PopoverController,
               public alertService   : AlertService,
-              private envService    : EnvService,
+              public envService    : EnvService,
               public loadingCtrl    : LoadingController) { }
 
   ngOnInit() {

@@ -23,7 +23,7 @@ export class DetailRisikoPage implements OnInit {
 
   constructor(private route         : ActivatedRoute,
               private dataService   : DataService,
-              private envService    : EnvService,
+              public envService     : EnvService,
               public alertService   : AlertService,
               public popoverCtrl    : PopoverController,
               public loadingCtrl    : LoadingController) { }

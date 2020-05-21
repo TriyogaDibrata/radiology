@@ -35,10 +35,6 @@
           <ion-label position="stacked">Pendidikan Terakhir <span>*</span></ion-label>
           <ion-input placeholder="Pendidikan terakhir" type="text" [(ngModel)]="user.education" (ionChange)="onChange($event)"></ion-input>
         </ion-item>
-        <div class="not-match error" *ngIf="pass_not_match">
-          <ion-icon name="alert"></ion-icon>
-          <ion-text>Error</ion-text>
-        </div>
       </ion-list>
     </ion-row>
   </div>

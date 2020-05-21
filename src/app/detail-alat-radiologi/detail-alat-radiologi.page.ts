@@ -24,7 +24,7 @@ export class DetailAlatRadiologiPage implements OnInit {
   constructor(private route         : ActivatedRoute,
               private dataService   : DataService,
               public popoverCtrl    : PopoverController,
-              private envService    : EnvService,
+              public envService    : EnvService,
               public alertService   : AlertService,
               public loadingCtrl    : LoadingController) { }
 

@@ -14,7 +14,7 @@ export class ImgPopoverComponent implements OnInit {
 
   constructor(
     private navParams: NavParams,
-    private envService: EnvService,
+    public envService: EnvService,
     private popoverCtrl: PopoverController
   ) {}
 

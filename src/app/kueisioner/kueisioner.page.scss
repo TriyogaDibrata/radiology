@@ -16,6 +16,10 @@
                 font-size: calc(var(--font-text-size) + 6px) !important;
                 font-weight: 500;
                 margin: 0 0 10px;
+
+                span {
+                    color: var(--ion-color-danger);
+                }
             }
             ion-input {
                 font-size: calc(var(--font-text-size) + 1px);

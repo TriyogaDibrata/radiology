@@ -13,65 +13,31 @@
     <ion-row>
       <ion-col class="ion-no-padding">
         <ion-list class="kueisioners">
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
+          <div *ngIf="show_st"> 
+            <ion-item lines="none" class="items" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                </h3>
+                <p>
+                  <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                </p>
+                <p>
+                  <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </div>
+          <ion-item lines="none" class="items" *ngFor="let item of kuis; let i = index;">
+            <ion-label>{{ item.pertanyaan }}</ion-label>
+            <ion-select value="notifications" interface="action-sheet" (ionChange)="select($event)" [(ngModel)]="options[i]">
               <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
+              <ion-select-option value="1">Benar</ion-select-option>
+              <ion-select-option value="0">Salah</ion-select-option>
             </ion-select>
           </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Pemeriksaan Rontgen menggunakan radiasi sinar-X bertujuan membantu dokter menentukan jenis penyakit.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option value="enable">Benar</ion-select-option>
-              <ion-select-option value="mute">Salah</ion-select-option>
-            </ion-select>
-          </ion-item>
-
-          <ion-item lines="none" class="button w-100" (click)="goTo('kueisioner-sikap')">
-            <ion-button expand="block" color="primary" class="ion-activatable ripple-parent" > Lanjutkan</ion-button>
+          <ion-item lines="none" class="button w-100">
+            <ion-button expand="block" color="primary" class="ion-activatable ripple-parent" (click)="result()" [disabled]="disabled_button"> Lanjutkan</ion-button>
           </ion-item>
         </ion-list>
       </ion-col>

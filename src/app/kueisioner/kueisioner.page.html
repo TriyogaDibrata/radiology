@@ -24,16 +24,16 @@
         <h4 class="content-title ion-no-margin-left">Lengkapi Identitas</h4>
         
         <ion-item>
-          <ion-label position="stacked">Nama Lengkap</ion-label>
-          <ion-input placeholder="Nama lengkap" type="text"></ion-input>
+          <ion-label position="stacked">Nama Lengkap <span>*</span></ion-label>
+          <ion-input placeholder="Nama lengkap" type="text" [(ngModel)]="user.name" (ionChagge)="onChange($event)"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Umur</ion-label>
-          <ion-input placeholder="Umur" type="number"></ion-input>
+          <ion-label position="stacked">Umur <span>*</span></ion-label>
+          <ion-input placeholder="Umur" type="number" [(ngModel)]="user.age" (ionChange)="onChange($event)"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Pendidikan Terakhir</ion-label>
-          <ion-input placeholder="Pendidikan terakhir" type="text"></ion-input>
+          <ion-label position="stacked">Pendidikan Terakhir <span>*</span></ion-label>
+          <ion-input placeholder="Pendidikan terakhir" type="text" [(ngModel)]="user.education" (ionChange)="onChange($event)"></ion-input>
         </ion-item>
         <div class="not-match error" *ngIf="pass_not_match">
           <ion-icon name="alert"></ion-icon>
@@ -45,5 +45,5 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button expand="block" color="primary" class="ion-activatable ripple-parent" (click)="goTo('kueisioner-pengetahuan')"> Mulai</ion-button>
+  <ion-button expand="block" color="primary" class="ion-activatable ripple-parent" (click)="next()" [disabled]="disabled_button"> Mulai</ion-button>
 </ion-footer>

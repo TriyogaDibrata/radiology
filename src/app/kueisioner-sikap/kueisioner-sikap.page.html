@@ -13,74 +13,34 @@
     <ion-row>
       <ion-col class="ion-no-padding">
         <ion-list class="kueisioners">
-          <ion-item lines="none" class="items">
-            <ion-label>Saya telah mengetahui  tentang pengertian dan manfaat sinar X.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
+          <div *ngIf="show_st"> 
+            <ion-item lines="none" class="items" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                </h3>
+                <p>
+                  <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                </p>
+                <p>
+                  <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </div>
+          <ion-item lines="none" class="items" *ngFor="let item of kuis; let i = index;">
+            <ion-label>{{ item.pertanyaan }}</ion-label>
+            <ion-select value="notifications" (ionChange)="select($event)" interface="action-sheet" [(ngModel)]="options[i]">
               <h4>Pilih Jawaban</h4>
-              <ion-select-option>Sangat Setuju</ion-select-option>
-              <ion-select-option>Setuju</ion-select-option>
-              <ion-select-option>Kurang Setuju</ion-select-option>
-              <ion-select-option>Tidak Setuju</ion-select-option>
-              <ion-select-option>Sangat Tidak Setuju</ion-select-option>
+              <ion-select-option value="5">Sangat Setuju</ion-select-option>
+              <ion-select-option value="4">Setuju</ion-select-option>
+              <ion-select-option value="3">Kurang Setuju</ion-select-option>
+              <ion-select-option value="2">Tidak Setuju</ion-select-option>
+              <ion-select-option value="1">Sangat Tidak Setuju</ion-select-option>
             </ion-select>
           </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Saya telah mengetahui  tentang pengertian dan manfaat sinar X.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option>Sangat Setuju</ion-select-option>
-              <ion-select-option>Setuju</ion-select-option>
-              <ion-select-option>Kurang Setuju</ion-select-option>
-              <ion-select-option>Tidak Setuju</ion-select-option>
-              <ion-select-option>Sangat Tidak Setuju</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Saya telah mengetahui  tentang pengertian dan manfaat sinar X.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option>Sangat Setuju</ion-select-option>
-              <ion-select-option>Setuju</ion-select-option>
-              <ion-select-option>Kurang Setuju</ion-select-option>
-              <ion-select-option>Tidak Setuju</ion-select-option>
-              <ion-select-option>Sangat Tidak Setuju</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Saya telah mengetahui  tentang pengertian dan manfaat sinar X.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option>Sangat Setuju</ion-select-option>
-              <ion-select-option>Setuju</ion-select-option>
-              <ion-select-option>Kurang Setuju</ion-select-option>
-              <ion-select-option>Tidak Setuju</ion-select-option>
-              <ion-select-option>Sangat Tidak Setuju</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Saya telah mengetahui  tentang pengertian dan manfaat sinar X.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option>Sangat Setuju</ion-select-option>
-              <ion-select-option>Setuju</ion-select-option>
-              <ion-select-option>Kurang Setuju</ion-select-option>
-              <ion-select-option>Tidak Setuju</ion-select-option>
-              <ion-select-option>Sangat Tidak Setuju</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="items">
-            <ion-label>Saya telah mengetahui  tentang pengertian dan manfaat sinar X.</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <h4>Pilih Jawaban</h4>
-              <ion-select-option>Sangat Setuju</ion-select-option>
-              <ion-select-option>Setuju</ion-select-option>
-              <ion-select-option>Kurang Setuju</ion-select-option>
-              <ion-select-option>Tidak Setuju</ion-select-option>
-              <ion-select-option>Sangat Tidak Setuju</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="none" class="button w-100" (click)="goTo('kueisioner-hasil')">
-            <ion-button expand="block" color="primary" class="ion-activatable ripple-parent" > Lihat Hasil</ion-button>
+          <ion-item lines="none" class="button w-100">
+            <ion-button expand="block" color="primary" class="ion-activatable ripple-parent" [disabled]="disabled_button" (click)="getResult()"> Lihat Hasil</ion-button>
           </ion-item>
         </ion-list>
       </ion-col>

@@ -764,3 +764,7 @@ width: 85% !important;
 .text-secondary {
   color: var(--ion-color-paragraph);
 }
+
+ion-skeleton-text{
+  --border-radius : 7px;
+}

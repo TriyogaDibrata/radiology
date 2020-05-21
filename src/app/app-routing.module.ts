@@ -41,15 +41,15 @@ const routes: Routes = [
     loadChildren: () => import('./kueisioner/kueisioner.module').then( m => m.KueisionerPageModule)
   },
   {
-    path: 'kueisioner-pengetahuan',
+    path: 'kueisioner-pengetahuan/:dataObj',
     loadChildren: () => import('./kueisioner-pengetahuan/kueisioner-pengetahuan.module').then( m => m.KueisionerPengetahuanPageModule)
   },
   {
-    path: 'kueisioner-sikap',
+    path: 'kueisioner-sikap/:dataObj',
     loadChildren: () => import('./kueisioner-sikap/kueisioner-sikap.module').then( m => m.KueisionerSikapPageModule)
   },
   {
-    path: 'kueisioner-hasil',
+    path: 'kueisioner-hasil/:id',
     loadChildren: () => import('./kueisioner-hasil/kueisioner-hasil.module').then( m => m.KueisionerHasilPageModule)
   },
 ];

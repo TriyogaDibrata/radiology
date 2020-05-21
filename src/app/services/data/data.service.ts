@@ -49,4 +49,24 @@ export class DataService {
     .pipe();
   }
 
+  getKuisPengetahuan(){
+    return this.http.get(this.env.API_URL + 'kuis/pengetahuan', {headers : this.headers})
+    .pipe();
+  }
+
+  getKuisSikap(){
+    return this.http.get(this.env.API_URL + 'kuis/sikap', {headers : this.headers})
+    .pipe();
+  }
+
+  saveResult(data){
+    return this.http.post(this.env.API_URL+ 'kuis/save-result', data, {headers : this.headers})
+    .pipe();
+  }
+
+  getResult(id){
+    return this.http.get(this.env.API_URL+ 'kuis/get-result/'+id, {headers : this.headers})
+    .pipe();
+  }
+
 }
